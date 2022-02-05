@@ -4,6 +4,16 @@ import java.util.ArrayList;
 
 public class Stages {
 
+    protected Double M0 = 1200.0; // Прочая масса, кг
+    protected Double M1 = 177656.0; // Полная масса первой ступени, кг
+    protected Double M1e = 4800.0 * 4; // Масса в конце работы первой ступени, кг
+    protected Double M2 = 99230.0; // Полная масса второй ступени, кг
+    protected Double M21 = 61570.0; // Масса второй ступени после отделения первой, кг
+    protected Double M2e = 8060.0; // Масса в конце работы блока второй ступени, кг
+    protected Double M3 = 25900.0; // Полная масса третьей ступени, кг
+    protected Double M3e = 3000.0; // Масса в конце работы блока третьей ступени, кг
+    protected Double Mk = 7320.0; // Масса космического корабля, кг
+
     protected Double t; // Время работы ступени, с
     protected Double F; // Тяга двигателя в вакууме, Н
     protected Double Fmin; // Минимальная тяга двигателя, Н
@@ -60,6 +70,9 @@ public class Stages {
     }
 
     protected void printParameters() {
+        System.out.println("M = " + (M0 + M1 + M2 + M3 + Mk));
+        System.out.println("M123 = " + (M1 + M2 + M3));
+        System.out.println("Расход массы: " + k);
         System.out.println("Параметры в конце работы ступени " + this.getClass().getSimpleName());
         System.out.println("X = " + String.format("%.0f", movementXValues.get(movementXValues.size()-1)) + " м");
         System.out.println("Y = " + String.format("%.0f", movementYValues.get(movementYValues.size()-1)) + " м");

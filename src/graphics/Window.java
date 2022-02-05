@@ -15,7 +15,6 @@ public class Window extends JFrame {
 
         setLocation(0, 0);
         setBackground(Color.WHITE);
-        //add(new SplinePanel());
         panel = new FunctionPanel();
         add(panel);
     }

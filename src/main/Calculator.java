@@ -19,7 +19,6 @@ public class Calculator {
     public Calculator() {
         evaluateParameters();
         calculateTrajectory();
-//        countYspeed();
     }
 
     private void evaluateParameters() {

@@ -6,5 +6,6 @@ public class Main {
     static public void main(String[] args) {
 
         Window window = new Window();
+        window.getPanel().updateUI();
     }
 }
