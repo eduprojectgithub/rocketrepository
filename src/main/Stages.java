@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Stages {
 
     protected Double M0 = 1200.0; // Прочая масса, кг
-    protected Double M1 = 278000.0*2; // Полная масса первой ступени, кг
-    protected Double M1e = 33000.0*2; // Масса первой ступени в конце работы первой ступени, кг
-    protected Double M2 = 184700.0; // Полная масса второй ступени, кг
-    protected Double M21 = 184700.0 - 45220.0; // Масса второй ступени после отделения первой, кг
-    protected Double M2e = 14700.0; // Масса второй ступени в конце работы блока второй ступени, кг
-    protected Double M3 = 19440.0; // Полная масса третьей ступени, кг
-    protected Double M3e = 4540.0; // Масса в конце работы блока третьей ступени, кг
-    protected Double Mk = 6161.0; // Масса космического корабля, кг
+    protected Double M1 = 43400.0*4; // Полная масса первой ступени, кг
+    protected Double M1e = 4800.0 * 4; // Масса в конце работы первой ступени, кг
+    protected Double M2 = 99230.0; // Полная масса второй ступени, кг
+    protected Double M21 = 61570.0; // Масса второй ступени после отделения первой, кг
+    protected Double M2e = 8060.0; // Масса в конце работы блока второй ступени, кг
+    protected Double M3 = 25900.0; // Полная масса третьей ступени, кг
+    protected Double M3e = 3000.0; // Масса в конце работы блока третьей ступени, кг
+    protected Double Mk = 7320.0; // Масса космического корабля, кг
 
     protected Double t; // Время работы ступени, с
     protected Double F; // Тяга двигателя в вакууме, Н
@@ -31,8 +31,10 @@ public class Stages {
     protected ArrayList<Double> speedXValues = new ArrayList<Double>();
     protected ArrayList<Double> speedYValues = new ArrayList<Double>();
 
-    ArrayList<Double> accelerationXValues = new ArrayList<Double>();
-    ArrayList<Double> accelerationYValues = new ArrayList<Double>();
+    protected ArrayList<Double> accelerationXValues = new ArrayList<Double>();
+    protected ArrayList<Double> accelerationYValues = new ArrayList<Double>();
+
+    protected ArrayList<Double> resistanceValues = new ArrayList<>();
 
     protected Double step = 0.01;
 
@@ -114,5 +116,9 @@ public class Stages {
 
     public ArrayList<Double> getAccelerationYValues() {
         return accelerationYValues;
+    }
+
+    public ArrayList<Double> getResistanceValues() {
+        return resistanceValues;
     }
 }

@@ -3,13 +3,10 @@ package main;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Calculator {
+public class Calculator2 {
 
     private ArrayList<Double> xAxisValues = new ArrayList<>();
     private ArrayList<Double> yAxisValues = new ArrayList<>();
-
-    private ArrayList<Double> yAxisValuesR = new ArrayList<>();
-    private ArrayList<Double> velocity = new ArrayList<>();
 
     Double r = 6371000.0; // Радиус Земли
 
@@ -19,7 +16,7 @@ public class Calculator {
     public StageTwo stageTwo = new StageTwo();
     public StageThree stageThree = new StageThree();
 
-    public Calculator() {
+    public Calculator2() {
         evaluateParameters();
         calculateTrajectory();
     }
@@ -28,7 +25,7 @@ public class Calculator {
         stageTwo.setStageOne(stageOne);
         stageThree.setStageTwo(stageTwo);
 
-        stageOne.calculateFunction(1);
+        stageOne.calculateFunction(0);
         stageTwo.calculateFunction();
         stageThree.calculateFunction();
     }
@@ -41,12 +38,6 @@ public class Calculator {
         yAxisValues.addAll(stageOne.getMovementYValues());
         yAxisValues.addAll(stageTwo.getMovementYValues());
         yAxisValues.addAll(stageThree.getMovementYValues());
-
-        yAxisValuesR.addAll(stageOne.getResistanceValues());
-
-        for(int i = 0; i < stageOne.speedXValues.size(); i++) {
-            velocity.add(Math.sqrt(Math.pow(stageOne.speedXValues.get(i), 2) + Math.pow(stageOne.speedYValues.get(i), 2)));
-        }
 
         curvatureCorrection();
 
@@ -70,14 +61,6 @@ public class Calculator {
 
     public ArrayList<Double> getxAxisValues() {
         return xAxisValues;
-    }
-
-    public ArrayList<Double> getyAxisValuesR() {
-        return yAxisValuesR;
-    }
-
-    public ArrayList<Double> getVelocity() {
-        return velocity;
     }
 
     public double getScaleRatio() {

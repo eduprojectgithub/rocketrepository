@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class Window extends JFrame {
 
-    private FunctionPanel panel;
+    private JPanel panel;
 
     public Window() {
         super();
@@ -16,10 +16,11 @@ public class Window extends JFrame {
         setLocation(0, 0);
         setBackground(Color.WHITE);
         panel = new FunctionPanel();
+//        panel = new FunctionPanel1();
         add(panel);
     }
 
-    public FunctionPanel getPanel() {
+    public JPanel getPanel() {
         return panel;
     }
 }
