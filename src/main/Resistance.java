@@ -22,7 +22,7 @@ public class Resistance {
 
     static public Double resistance(Double h, Double vx, Double vy) {
         Double r = cxResult(h, Math.sqrt(vx*vx + vy*vy))*density(h)*(vx*vx + vy*vy)*S*0.5;
-        System.out.println(r);
+//        System.out.println(r);
         return r;
     }
 
